@@ -70,6 +70,7 @@ function validateCompanyModel(data) {
 }
 
 function saveCompanyData(anafData, peviitorData) {
+  fs.mkdirSync("tmp", { recursive: true });
   const companyData = {
     validatedAt: new Date().toISOString(),
     source: "ANAF",

@@ -169,6 +169,7 @@ async function main() {
     const validCount = transformedPayload.jobs.filter(j => j.location).length;
     console.log(`Jobs with valid Romanian locations: ${validCount}`);
 
+    fs.mkdirSync("tmp", { recursive: true });
     fs.writeFileSync("tmp/jobs.json", JSON.stringify(transformedPayload, null, 2), "utf-8");
     console.log("Saved tmp/jobs.json");
 
